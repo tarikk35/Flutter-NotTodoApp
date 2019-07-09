@@ -64,7 +64,7 @@ class _TileState extends State<Tile> {
           // seen when sliding but only a simple static icon
           alignment: Alignment.centerRight,
           padding: EdgeInsets.only(right: 40),
-          color: Colors.purple,
+          color: Colors.redAccent,
           child: Icon(Icons.delete_sweep),
         ),
         onDismissed: (direction) {
@@ -77,7 +77,7 @@ class _TileState extends State<Tile> {
           }
         },
         child: Card(
-          color: Colors.white70,
+          color: Colors.white,
           child: AnimatedContainer(
             height: model.selectedItem == widget.item ? 120 : 80,
             child: ListTile(
@@ -91,6 +91,11 @@ class _TileState extends State<Tile> {
                   model.selectItem(widget.item);
                 }
               },
+              trailing: IconButton(
+                icon: Icon(Icons.star),
+                color: Colors.yellow.shade700,
+                onPressed: () {},
+              ),
               leading: Icon(
                 Icons.directions_run,
                 color: Colors.green,

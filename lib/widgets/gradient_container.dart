@@ -11,13 +11,13 @@ class GradientContainer extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
             colors: [
-              Colors.black26,
+              Colors.white24,
               Colors.black12,
-              Colors.white24
+              Colors.black26
             ],
-            begin: Alignment.topLeft,
+            begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            stops: [0.1, 0.2, 0.7]),
+            ),
       ),
       child: child!=null?child:null,
     );

@@ -11,6 +11,7 @@ class TransparentAppbar extends StatelessWidget {
         child: Container(
           alignment: Alignment.bottomCenter,
           height: 100,
+          color: Colors.red,
           width: MediaQuery.of(context).size.width,
           child: Text(
             'Not to do',

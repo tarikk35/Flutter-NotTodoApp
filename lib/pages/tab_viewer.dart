@@ -18,25 +18,26 @@ class _TabViewerState extends State<TabViewer>
   int currIndex = 1;
   TabController _controller;
 
-  @override
-  void initState() {
-    super.initState();
-    _controller = TabController(length: 3, initialIndex: 1, vsync: this);
-    AppModel.controller = _controller;
-    _controller.addListener(() {
-      setState(() {
-        currIndex = _controller.index;
-      });
-    });
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   _controller = TabController(length: 3, initialIndex: 1, vsync: this);
+  //   AppModel.controller = _controller;
+  //   _controller.addListener(() {
+  //     setState(() {
+  //       currIndex = _controller.index;
+  //     });
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
     return ScopedModelDescendant<AppModel>(
       builder: (context, child, model) => Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size(double.infinity, 120),
+          preferredSize: Size(double.infinity, 100),
           child: Container(
+            alignment: Alignment.bottomCenter,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 // Where the linear gradient begins and ends

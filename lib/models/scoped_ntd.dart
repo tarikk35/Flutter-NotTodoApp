@@ -18,7 +18,7 @@ class AppModel extends Model with SoundOps {
 
   int selectedId = 0;
 
-  static TabController controller;
+  static PageController controller;
 
   NotTodo get selectedItem => _selectedItem;
 

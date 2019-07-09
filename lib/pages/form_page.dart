@@ -18,8 +18,8 @@ class FormPage extends StatelessWidget {
     void _changePage() {
       AppModel().unselectItem();
       FocusScope.of(context).requestFocus(new FocusNode());
-      AppModel.controller.animateTo(1,
-          duration: Duration(milliseconds: 400), curve: SawTooth(1));
+      AppModel.controller.animateToPage(1,
+          duration: Duration(milliseconds: 200), curve: Curves.easeInExpo);
     }
 
     bool _isEdit() {
