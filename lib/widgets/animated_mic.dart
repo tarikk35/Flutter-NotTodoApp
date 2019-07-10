@@ -16,7 +16,7 @@ class AnimatedMic extends StatelessWidget {
                 icon: Icon(
                   Icons.mic,
                   size: 60,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
                 onPressed: () async {
                   model.changePath(await model.startRecording());
@@ -42,7 +42,7 @@ class AnimatedMic extends StatelessWidget {
                 ? CrossFadeState.showSecond
                 : CrossFadeState.showFirst,
           ),
-          Text(model.recorderTxt),
+          Text(model.recorderTxt,style: TextStyle(color: Colors.white),),
         ],
       ),
     );

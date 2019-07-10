@@ -13,7 +13,7 @@ mixin SoundOps on Model {
   bool isRecording = false;
   PlayStatus playStatus = PlayStatus.Stopped;
   String currRecordPath = '';
-  int playIndex;
+  int playIndex = -1;
   String playerTxt = '00:00:00';
 
   void changePath(path) {
@@ -56,9 +56,11 @@ mixin SoundOps on Model {
     }
   }
 
-  startPlayer(_uri) async {
+  startPlayer(_uri, index) async {
     try {
+      playIndex = index;
       await flutterSound.startPlayer(_uri);
+      print('$playIndex $index');
       playStatus = PlayStatus.Playing;
       flutterSound.onPlayerStateChanged.listen((e) {
         if (e != null) {
@@ -68,7 +70,11 @@ mixin SoundOps on Model {
           playerTxt = txt.substring(0, 8);
           notifyListeners();
         }
-      }).onDone(() => playStatus = PlayStatus.Stopped);
+      }).onDone(() {
+        playStatus = PlayStatus.Stopped;
+        playIndex = -1;
+        notifyListeners();
+      });
     } catch (e) {
       print(e);
     }
@@ -99,11 +105,24 @@ mixin SoundOps on Model {
     }
   }
 
-  stopPlayer() async {
+  Future<Null> stopPlayer() async {
     try {
       await flutterSound.stopPlayer();
       playStatus = PlayStatus.Stopped;
+      playIndex = -1;
       notifyListeners();
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  changePlayer(uri, index) async {
+    try {
+      await stopPlayer().then((_) async{
+        await startPlayer(uri,index);
+        playIndex=index;
+        notifyListeners();
+      });
     } catch (e) {
       print(e);
     }

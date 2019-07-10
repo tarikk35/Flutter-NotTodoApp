@@ -54,15 +54,15 @@ class _PageViewerState extends State<PageViewer> {
             right: 0,
             height: 120,
             child: Container(
-              color: Colors.transparent,
+              color: Color.fromRGBO(58, 66, 86, 1.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   MyAnimatedIcon(
                     beginningSize: 28,
                     targetSize: 46,
-                    color1: Colors.blue.shade200,
-                    color2: Colors.blue.shade600,
+                    color1: Colors.white30,
+                    color2: Colors.white,
                     icon: Icons.add,
                     onPressed: _onPressedHandler,
                     index: 0,
@@ -71,8 +71,8 @@ class _PageViewerState extends State<PageViewer> {
                   MyAnimatedIcon(
                     beginningSize: 46,
                     targetSize: 88,
-                    color1: Colors.red.shade200,
-                    color2: Colors.red.shade600,
+                    color1: Colors.white30,
+                    color2: Colors.white,
                     icon: Icons.home,
                     onPressed: _onPressedHandler,
                     index: 1,
@@ -81,8 +81,8 @@ class _PageViewerState extends State<PageViewer> {
                   MyAnimatedIcon(
                     beginningSize: 28,
                     targetSize: 46,
-                    color1: Colors.yellow.shade200,
-                    color2: Colors.yellow.shade600,
+                    color1: Colors.white30,
+                    color2: Colors.white,
                     icon: Icons.tag_faces,
                     onPressed: _onPressedHandler,
                     index: 2,

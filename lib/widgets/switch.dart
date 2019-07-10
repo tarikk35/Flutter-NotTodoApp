@@ -16,12 +16,12 @@ class _SwitchState extends State<CustomSwitch> {
     return Container(
       padding: EdgeInsets.only(left: 40,right: 40),
       child: SwitchListTile(
-        activeColor: Colors.black,
+        activeColor: Colors.white,
         inactiveTrackColor: Colors.black26,
         inactiveThumbColor: Colors.grey,
         title: Text(
           'This is active',
-          style: TextStyle(fontSize: 20,color: Colors.black87),
+          style: TextStyle(fontSize: 20,color: Colors.white70),
         ),
         value: AppModel().isActive,
         onChanged: (value) {

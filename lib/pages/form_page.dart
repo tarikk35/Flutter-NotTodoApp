@@ -72,7 +72,7 @@ class FormPage extends StatelessWidget {
               title: Text(
                 'Not To Do',
                 style: TextStyle(
-                    color: Colors.black, fontSize: 44, fontFamily: 'Kingsman'),
+                    color: Colors.white, fontSize: 44, fontFamily: 'Kingsman'),
               ),
               centerTitle: true,
               floating: true,
@@ -95,7 +95,7 @@ class FormPage extends StatelessWidget {
                           controller: _titleController,
                           validationMsg:
                               'Please make sure you fill in the field.',
-                          icon: Icon(Icons.do_not_disturb),
+                          icon: Icon(Icons.do_not_disturb,color: Colors.white,),
                           text:
                               _isEdit() ? AppModel().selectedItem.title : null,
                         ),
@@ -107,7 +107,7 @@ class FormPage extends StatelessWidget {
                             controller: _detailController,
                             validationMsg:
                                 'Please make sure you fill in the field.',
-                            icon: Icon(Icons.edit),
+                            icon: Icon(Icons.edit,color: Colors.white,),
                             text: _isEdit()
                                 ? AppModel().selectedItem.details
                                 : null),
