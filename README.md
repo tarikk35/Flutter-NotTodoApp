@@ -1,6 +1,7 @@
 # not_todo_app
 
 An app that you can keep and organize your 'not-to-do' s in a place. (I'm still learning Flutter)
+![alt text](https://i.ibb.co/C1VzfNy/Screenshot-1562751817.png)
 
 # Features
   - Create, save and organize your not-todo's in a place
